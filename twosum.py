@@ -10,3 +10,5 @@ class Solution(object):
                 return [dict[num], i]
             else:
                 dict[target-num] = i
+c = Solution()
+print(c.twoSum([13,3,22,12,345],15))
