@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# 队列：只允许在一端进行插入操作，而在另一端进行删除操作的线性表
+# 先进先出（FIFO）： First In First Out
+# 对头，队尾
+# 同样可以使用顺序表和链表
+
+class Queue(object):
+    """队列"""
+
+    def __init__(self):
+        self.__queue = []
+
+    def enqueue(self, item):
+        """队列尾部添加元素"""
+        return self.__queue.append(item)
+
+    def dequeue(self):
+        """队列头部弹出元素"""
+        return self.__queue.pop(0)
+
+    def is_empty(self):
+        """队列是否为空"""
+        return self.__queue == []
+
+    def size(self):
+        """队列中元素个数"""
+        return len(self.__queue)
+
+
+if __name__ == "__main__":
+    q = Queue()
+
+
+class Deque(object):
+    """双端队列"""
+
+    def __init__(self):
+        self.__deque = []
+
+    def add_front(self, item):
+        """队列头部添加元素"""
+        return self.__deque.insert(0, item)
+
+    def add_rear(self, item):
+        """队列尾部添加元素"""
+        return self.__deque.append(item)
+
+    def pop_front(self, item):
+        """队列头部弹出元素"""
+        return self.__deque.pop(0)
+
+    def pop_rear(self, item):
+        """队列尾部弹出元素"""
+        return self.__deque.pop()
+
+    def is_empty(self):
+        """队列是否为空"""
+        return self.__deque == []
+
+    def size(self):
+        """队列中元素个数"""
+        return len(self.__duque)
