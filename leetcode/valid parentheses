@@ -1,0 +1,35 @@
+判断括号匹配的合法性。使用一个栈来解决问题。遇到左括号入栈，遇到右括号，检查栈顶的左括号是否匹配，如果匹配，弹栈，如果不匹配，返回错误。如果栈为空，而遇到右括号，同样返回错误。遍历完后，栈如果不空，同样返回错误。
+
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+Note that an empty string is also considered valid.
+
+
+
+class Solution:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        stack = []
+        if len(s) == 0:
+            return True
+        if len(s) % 2 != 0:
+            return False
+        
+        for c in s:
+            if c =='(':
+                stack.append(')')
+            elif c =='[':
+                stack.append(']')
+            elif c == '{':
+                stack.append('}')
+            elif stack:
+                p = stack.pop()
+                if p != c:
+                    return False
+        if stack:
+            return False
+        else:
+            return True
