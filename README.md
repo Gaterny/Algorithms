@@ -20,7 +20,6 @@ Ctrl + /    行注释/取消行注释
 Ctrl + Shift + /    块注释
 Ctrl + W    选中增加的代码块
 Ctrl + Shift + W    回到之前状态
-Ctrl + Shift + ]/[     选定代码块结束、开始
 Alt + Enter    快速修正
 Ctrl + Alt + L     代码格式化
 Ctrl + Alt + O    优化导入
@@ -87,7 +86,6 @@ Ctrl + Shift + I查看快速定义
 Ctrl + Shift + B跳转到类型声明
 Ctrl + U跳转到父方法、父类
 Alt + Up/Down跳转到上一个、下一个方法
-Ctrl + ]/[跳转到代码块结束、开始
 Ctrl + F12弹出文件结构
 Ctrl + H类型层次结构
 Ctrl + Shift + H方法层次结构
