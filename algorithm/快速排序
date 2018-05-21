@@ -1,1 +1,26 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# 取一个元素p，使元素p归位（把p右边比p小的元素都放在它左边，在把空缺位置的左边比p大的元素放在p右边）；
+# 列表被p分成两部分，左边都比p小，右边都比p大；然后对左右递归完成排序
+# 时间复杂度：O(nlogn)
+# 稳定性：不稳定
 
+
+def quick_sort(alist, left, right):
+    if left >= right:
+        return alist
+    key = alist[left]
+    low = left
+    high = right
+    while left < right:
+        while left < right and alist[right] >= key:
+            right -= 1
+        alist[left] = alist[right]
+
+        while left < right and alist[left] <= key:
+            left += 1
+        alist[right] = alist[left]
+    alist[right] = key
+    quick_sort(alist, low, left-1)
+    quick_sort(alist, left+1, high)
+    return alist
